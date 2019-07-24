@@ -161,19 +161,17 @@ export class player {
             }
         }
         if (!envelope) {
-            envelope = {
-                target: target,
-                when: when,
-                duration: duration,
-                cancel: () => {
-                    if (envelope.when + envelope.duration > context.currentTime) {
-                        envelope.gain.cancelScheduledValues(0);
-                        envelope.gain.setTargetAtTime(0.00001, context.currentTime, 0.1);
-                        envelope.when = context.currentTime + 0.00001;
-                        envelope.duration = 0;
-                    }
-                },
-                ...context.createGain()
+            const envelope: Envelope = context.createGain();
+            envelope.target = target;
+            envelope.when = when;
+            envelope.duration = duration;
+            envelope.cancel = () => {
+                if (envelope.when + envelope.duration > context.currentTime) {
+                    envelope.gain.cancelScheduledValues(0);
+                    envelope.gain.setTargetAtTime(0.00001, context.currentTime, 0.1);
+                    envelope.when = context.currentTime + 0.00001;
+                    envelope.duration = 0;
+                }
             };
             envelope.connect(target);
             this.envelopes.push(envelope);
