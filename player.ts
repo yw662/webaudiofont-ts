@@ -161,7 +161,7 @@ export class player {
             }
         }
         if (!envelope) {
-            const envelope: Envelope = context.createGain();
+            envelope = context.createGain();
             envelope.target = target;
             envelope.when = when;
             envelope.duration = duration;
