@@ -1932,7 +1932,7 @@ export class loader {
         return {
             variable: '_drum_' + key,
             url: 'https://surikov.github.io/webaudiofontdata/sound/128' + key + '.js',
-            pitch: p,
+            pitch: p + 35,
             title: this.drumNamesArray[p]
         }
     }
