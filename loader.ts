@@ -1937,7 +1937,7 @@ export class loader {
         }
     }
     findDrum(n: number) {
-        return Math.max(0, this.drumKeyArray.findIndex(v => Number.parseInt(v.substring(0, 3)) === n));
+        return Math.max(0, this.drumKeyArray.findIndex(v => Number.parseInt(v.substring(0, 2)) - 35 === n));
     }
     constructor(player) {
         this.player = player;
