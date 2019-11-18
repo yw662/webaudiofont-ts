@@ -1928,7 +1928,7 @@ export class loader {
     }
     drumInfo(n: number) {
         const key = this.drumKeyArray[n];
-        const p = Number.parseInt(key.substr(0, 2));
+        const p = Number.parseInt(key.substr(0, 2)) - 35;
         return {
             variable: '_drum_' + key,
             url: 'https://surikov.github.io/webaudiofontdata/sound/128' + key + '.js',
