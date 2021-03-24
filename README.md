@@ -5,4 +5,4 @@ Due to a license issue, as you may have noticed, this project (which is under MI
 If you want a newer version, you may need to do it on your own, or maybe we can talk about that.
 
 
-For now (by March 2021), the upstream did contains some minor improvements, but this project should still work.
+For now (by March 2021), the upstream did contain some minor improvements, but this project should still work.
